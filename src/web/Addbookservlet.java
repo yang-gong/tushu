@@ -40,10 +40,10 @@ public class Addbookservlet extends HttpServlet {
     	book.setPrice(price);
     	BookDaoAmpi bookdao= new BookDaoAmpi();
     	int i=bookdao.addbook(book);
-    	System.out.println("456");
-    	request.getRequestDispatcher("bookServlet").forward(request, response);
-    	
-    	
+
+    	request.getRequestDispatcher("bookServlet?pageNo=1").forward(request, response);
+
+
     	
 	}
 	/**

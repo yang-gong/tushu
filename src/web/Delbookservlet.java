@@ -32,7 +32,7 @@ public class Delbookservlet extends HttpServlet {
 	int id = Integer.parseInt(idstring);
 	BookDaoAmpi bookdao=new BookDaoAmpi();
 	int i=bookdao.delbookbuid(id);
-	request.getRequestDispatcher("bookServlet").forward(request, response);
+	request.getRequestDispatcher("bookServlet?pageNo=1").forward(request, response);
 	}
 
 	/**

@@ -44,7 +44,7 @@ public class Updataservlet extends HttpServlet {
     	BookDaoAmpi bookdao= new BookDaoAmpi();
     	int i=bookdao.updatebook(book);
     	System.out.println("456");
-    	request.getRequestDispatcher("bookServlet").forward(request, response);
+    	request.getRequestDispatcher("bookServlet?pageNo=1").forward(request, response);
 	}
 
 	/**

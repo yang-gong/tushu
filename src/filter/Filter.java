@@ -41,7 +41,7 @@ public class Filter implements javax.servlet.Filter {
 		HttpServletResponse res = (HttpServletResponse) response;
 		String username = (String) req.getSession().getAttribute("username");
 		if (username != null || "/index.jsp".equals(req.getServletPath()) || "/loginServlet".equals(req.getServletPath())
-				|| "/login.jsp".equals(req.getServletPath())) {
+				|| "/login.jsp".equals(req.getServletPath())|| "/reg.jsp".equals(req.getServletPath())|| "/regservlet".equals(req.getServletPath())) {
 			// pass the request along the filter chain
 			chain.doFilter(request, response);
 		} else {

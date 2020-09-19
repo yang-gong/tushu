@@ -10,8 +10,27 @@ import entity.Page;
 
 public class BookDaoAmpi extends BaseDao implements BookDao {
 
+
+
 	@Override
-	public List<Book> bookList() {
+	public int delbookbuid(int id) {     //shan chu
+		Object[] o = { id };
+		int i = this.executUpdate("delete from book where id=?", o);
+		this.closeAll();
+		return i;
+
+	}
+
+	@Override
+	public int addbook(Book book) {    //zeng jia
+		Object[] o = { book.getBookName(), book.getAuothor(), book.getPrice() };
+		int num = this.executUpdate("insert into book (bookName,auothor,price) values (?,?,?) ", o);
+		this.closeAll();
+
+		return num;
+	}
+	@Override
+	public List<Book> bookList() {   //shuliebiao
 		ResultSet rs = this.executeQuery("select * from book ", null);
 		List<Book> list = new ArrayList<Book>();
 		try {
@@ -36,25 +55,6 @@ public class BookDaoAmpi extends BaseDao implements BookDao {
 		return list;
 
 	}
-
-	@Override
-	public int delbookbuid(int id) {
-		Object[] o = { id };
-		int i = this.executUpdate("delete from book where id=?", o);
-		this.closeAll();
-		return i;
-
-	}
-
-	@Override
-	public int addbook(Book book) {
-		Object[] o = { book.getBookName(), book.getAuothor(), book.getPrice() };
-		int num = this.executUpdate("insert into book (bookName,auothor,price) values (?,?,?) ", o);
-		this.closeAll();
-		System.out.println("123");
-		return num;
-	}
-
 	@Override
 	public List<Book> Querybook(String bookName) {
 		String bname = "%" + bookName + "%";
@@ -89,10 +89,11 @@ public class BookDaoAmpi extends BaseDao implements BookDao {
 		Page page = new Page();
 		page.setCurrPageNo(pageNo);
 		page.setTotalCount(this.getcount());
+
 		Object[] o = { (pageNo - 1) * 10, 10 };
 		List<Book> list = new ArrayList<Book>();
 
-		ResultSet rs = this.executeQuery("SELECT * from book LIMIT ?,?", o);
+		ResultSet rs = this.executeQuery("SELECT * from book LIMIT ?,? ", o);
 		try {
 			while (rs.next()) {
 				int id = rs.getInt(1);

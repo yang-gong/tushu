@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.BookDaoAmpi;
 import entity.Book;
+import entity.Page;
 
 /**
  * Servlet implementation class Queryservlet
@@ -36,6 +37,9 @@ public class Queryservlet extends HttpServlet {
 		BookDaoAmpi bookdao=new BookDaoAmpi();
 		List<Book> list=bookdao.Querybook(bookName);
 		request.setAttribute("list", list);
+
+
+
 			request.getRequestDispatcher("booklist.jsp").forward(request, response);		
 	}
 

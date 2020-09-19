@@ -9,7 +9,6 @@ public class BaseDao {
 	public Connection getCon() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			System.out.println("鏁版嵁搴撻┍鍔ㄥ姞杞藉畬鎴�");
 			String url="jdbc:mysql://localhost:3306/cabb?useUnicode=true&characterEncoding=UTF-8";
 			String username="root";
 			String password="111";
