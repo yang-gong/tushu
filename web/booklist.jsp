@@ -13,27 +13,7 @@
 		图书书名:<input type="text" name="bookName">
 		 <input	type="submit" value="查询">
 	</form>
-	<table>
-		<tr>
-			<td>编号</td>
-			<td>书名</td>
-			<td>作者</td>
-			<td>价格</td>
-			<td>操作</td>
-		</tr>
-		<c:forEach items="${list }" var="book">
 
-			<tr>
-				<td>${book.id }</td>
-				<td>${book.bookName}</td>
-				<td>${book.auothor }</td>
-				<td>${book.price }</td>
-				<td><a href="delbooservlet?id=${book.id }">删除</a>
-					<a href="tobook.jsp?id=${book.id }&bookName=${book.bookName }&auothor=${book.auothor }&price=${book.price }">修改</a></td>
-			</tr>
-		</c:forEach>
-
-	</table>
 	<table>
 		<tr>
 			<td>编号</td>

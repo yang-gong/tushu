@@ -47,10 +47,7 @@ public class BookServlet extends HttpServlet {
 			pageNo = pageNo - 1;
 			page = bookdao.bookList(pageNo);
 		}
-
-
 		request.setAttribute("page", page);
-
 		request.getRequestDispatcher("booklist.jsp").forward(request, response);
 	}
 

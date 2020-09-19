@@ -35,8 +35,8 @@ public class Queryservlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		String bookName =request.getParameter("bookName");
 		BookDaoAmpi bookdao=new BookDaoAmpi();
-		List<Book> list=bookdao.Querybook(bookName);
-		request.setAttribute("list", list);
+		Page page= bookdao.qubook(bookName);
+		request.setAttribute("page", page);
 
 
 

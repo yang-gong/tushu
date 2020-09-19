@@ -12,5 +12,7 @@ public interface BookDao {
 	public List<Book> Querybook(String bookName);
 	public int updatebook(Book book);
 	public Page bookList(Integer pageNo);
+//	public Page Querybook(String bookName);
+	public Page qubook(String bookName);
 	public int getcount();
 	}
