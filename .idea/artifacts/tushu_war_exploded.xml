@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="tushu:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/tushu_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="tushu/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="tushu" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
